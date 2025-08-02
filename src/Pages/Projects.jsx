@@ -1,29 +1,53 @@
 import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt, FaNodeJs, FaReact } from "react-icons/fa";
+import {
+  SiExpress,
+  SiMongodb,
+  SiTailwindcss,
+  SiJavascript,
+} from "react-icons/si";
 import { FloatingDock } from "../components/FloatingDock";
+
+const techIcons = {
+  JavaScript: <SiJavascript className="text-yellow-300" />,
+  React: <FaReact className="text-cyan-400" />,
+  "Node.js": <FaNodeJs className="text-green-400" />,
+  Express: <SiExpress className="text-gray-300" />,
+  MongoDB: <SiMongodb className="text-green-500" />,
+  Tailwind: <SiTailwindcss className="text-sky-400" />,
+};
 
 const projects = [
   {
-    title: "Yudoku",
-    description: "The YouTube Course Experience Platform",
-    tech: ["Next.js", "Vercel", "Prisma", "Tailwind", "PostgreSQL"],
-    icons: ["🟦", "⚡️", "🔳", "🌊", "🐘"],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Hookinator",
-    description: "Webhook Toolkit for Developers",
-    tech: ["Next.js", "Go", "Tailwind", "PostgreSQL"],
-    icons: ["🟦", "💙", "🌊", "🐘"],
-    github: "#",
-    live: "#",
+    title: "Github Repositories",
+    description: "",
+    tech: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Tailwind"],
+    github: "https://github.com/akshaykocharekar",
+    live: "https://github.com/akshaykocharekar",
   },
 ];
 
+const pageVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const pageTransition = {
+  duration: 0.6,
+  ease: "easeInOut",
+};
+
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex justify-center items-start px-4 py-10">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="min-h-screen bg-black text-white flex justify-center items-start px-4 py-10"
+    >
       <div className="w-full max-w-2xl space-y-8">
         {/* Heading */}
         <h2 className="text-2xl font-bold">
@@ -45,12 +69,16 @@ const Projects = () => {
               <div className="flex justify-between items-start">
                 <div className="text-lg font-semibold">{project.title}</div>
                 <div className="flex gap-3 text-zinc-300">
-                  <a href={project.github} target="_blank" rel="noreferrer">
-                    <FaGithub className="hover:text-blue-400" />
-                  </a>
-                  <a href={project.live} target="_blank" rel="noreferrer">
-                    <FaExternalLinkAlt className="hover:text-blue-400" />
-                  </a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      <FaGithub className="hover:text-blue-400" />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer">
+                      <FaExternalLinkAlt className="hover:text-blue-400" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -59,12 +87,13 @@ const Projects = () => {
               </p>
 
               <div className="flex flex-wrap gap-2">
-                {project.tech.map((stack, j) => (
+                {project.tech.map((tech, j) => (
                   <div
                     key={j}
-                    className="px-3 py-1 rounded-full bg-zinc-800 text-xs border border-zinc-700"
+                    className="flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-800 text-xs border border-zinc-700"
                   >
-                    {stack}
+                    {techIcons[tech]}
+                    <span>{tech}</span>
                   </div>
                 ))}
               </div>
@@ -73,11 +102,11 @@ const Projects = () => {
         </div>
 
         {/* Floating Dock */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
           <FloatingDock />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

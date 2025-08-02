@@ -1,35 +1,36 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FloatingDock } from "../components/FloatingDock";
+
 const skillsList = [
-  {
-    name: "MongoDB",
-    description: "",
-  },
-  {
-    name: "React",
-    description: "",
-  },
-  {
-    name: "Node.js",
-    description: "",
-  },
-  {
-    name: "Express",
-    description: "",
-  },
-  {
-    name: "Tailwind CSS",
-    description: "",
-  },
-  {
-    name: "ChatGPT",
-    description: "",
-  },
+  { name: "MongoDB", description: "" },
+  { name: "React", description: "" },
+  { name: "Node.js", description: "" },
+  { name: "Express", description: "" },
+  { name: "Tailwind CSS", description: "" },
+  { name: "ChatGPT", description: "" },
 ];
+
+const pageVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const pageTransition = {
+  duration: 0.6,
+  ease: "easeInOut",
+};
 
 const Skills = () => {
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-6">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="min-h-screen bg-black text-white px-6 py-6"
+    >
       <h2 className="text-white text-2xl font-bold mb-6">
         <span className="text-blue-500 mr-1">&gt;</span>my skills
       </h2>
@@ -50,9 +51,10 @@ const Skills = () => {
           </div>
         ))}
       </div>
+
       {/* Floating Dock */}
       <FloatingDock />
-    </div>
+    </motion.div>
   );
 };
 
