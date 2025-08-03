@@ -37,7 +37,7 @@ const Home = () => {
             student & self-taught developer on a mission to build, break, and
             rebuild.
             <br />
-            currently exploring react, node, and system design.
+            currently exploring react and node
             <br />
             i’m passionate about clean code, great design, and persistent
             learning.
