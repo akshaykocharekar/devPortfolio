@@ -14,7 +14,7 @@ export const FloatingDock = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="relative mt-27 flex justify-center"
+      className="relative mt-18 flex justify-center"
     >
       <div className="px-5 py-2 bg-zinc-900 border border-zinc-700 rounded-full shadow-xl flex items-center backdrop-blur-md">
         {navItems.map((item, index) => (

@@ -9,7 +9,7 @@ import img from "../Assets/chillguy.jpg";
 const Home = () => {
   return (
     <>
-      <div className="mb-22">
+      <div className="mb-15">
         <StarAppreciation />
       </div>
       <div className="min-h-screen bg-black text-white px-6 py-6 relative space-y-8">
@@ -51,7 +51,7 @@ const Home = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedin className="text-2xl text-white hover:text-blue-400" />
+            <FaLinkedin className="text-xl text-white hover:text-blue-400" />
           </a>
           <a
             href="https://www.instagram.com/akshay.45__/"
