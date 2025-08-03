@@ -1,9 +1,11 @@
 import React from "react";
 import { FloatingDock } from "../components/FloatingDock";
 import ContactForm from "../components/ContactForm";
-import { FaGithub, FaXTwitter, FaEnvelope, FaDev } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import StarAppreciation from "../components/StarAppreciation";
 import img from "../Assets/chillguy.jpg";
+
 const Home = () => {
   return (
     <>
@@ -44,24 +46,30 @@ const Home = () => {
 
         {/* Socials */}
         <div className="flex gap-5 items-center">
-          <a href="https://github.com/akshay" target="_blank" rel="noreferrer">
-            <FaGithub className="text-2xl text-white hover:text-blue-400" />
+          <a
+            href="https://www.linkedin.com/in/akshay-kocharekar-859829321"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedin className="text-2xl text-white hover:text-blue-400" />
           </a>
-          <a href="https://x.com/akshay" target="_blank" rel="noreferrer">
-            <FaXTwitter className="text-2xl text-white hover:text-blue-400" />
+          <a
+            href="https://www.instagram.com/akshay.45__/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaInstagram className="text-2xl text-white hover:text-pink-400" />
           </a>
-          <a href="https://dev.to/akshay" target="_blank" rel="noreferrer">
-            <FaDev className="text-2xl text-white hover:text-blue-400" />
-          </a>
-          <a href="mailto:akshay@gmail.com">
+          <a href="mailto:akshaykocharekar20@gmail.com">
             <FaEnvelope className="text-2xl text-white hover:text-blue-400" />
           </a>
         </div>
+
         <ContactForm />
+
         {/* Floating Dock */}
         <FloatingDock />
       </div>
-      {/* Contact Form */}
     </>
   );
 };
