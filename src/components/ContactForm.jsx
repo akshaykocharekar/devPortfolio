@@ -7,18 +7,38 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = async () => {
+    if (!message.trim()) return;
+
     try {
+      setLoading(true);
+
       const res = await emailjs.send(
         "service_evubkcm",
         "template_a93afis",
         { email, message },
         "0gtpy9aciYdbYL1FO"
       );
-      if (res.status === 200) setSubmitted(true);
+
+      if (res.status === 200) {
+        setSubmitted(true);
+
+        // reset after success (optional but clean)
+        setTimeout(() => {
+          setStep(1);
+          setEmail("");
+          setMessage("");
+          setSubmitted(false);
+        }, 2500);
+      }
     } catch (err) {
       console.error("EmailJS error:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,9 +76,9 @@ const ContactForm = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <button
-                  className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-md"
+                  className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-md disabled:opacity-50"
                   onClick={() => setStep(2)}
-                  disabled={!email.includes("@")}
+                  disabled={!isValidEmail(email)}
                 >
                   Next
                 </button>
@@ -76,11 +96,11 @@ const ContactForm = () => {
                 />
                 <div className="flex justify-end">
                   <button
-                    className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-md"
+                    className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-md disabled:opacity-50"
                     onClick={handleSubmit}
-                    disabled={!message}
+                    disabled={!message.trim() || loading}
                   >
-                    Send
+                    {loading ? "Sending..." : "Send"}
                   </button>
                 </div>
               </div>
