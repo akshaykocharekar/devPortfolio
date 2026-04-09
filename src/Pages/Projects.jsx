@@ -22,7 +22,7 @@ const projects = [
   {
     title: "EasyCommute",
     description:
-      "Real-time ride-sharing platform with live tracking, payments, and map integration.",
+      "Real-time Bus Tracking platform with live tracking, payments, and map integration.",
     tech: [
       "JavaScript",
       "React",
