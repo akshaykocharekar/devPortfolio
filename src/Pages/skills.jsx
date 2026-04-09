@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { FloatingDock } from "../components/FloatingDock";
 
 const skillsList = [
-  { name: "React", description: "" },
+  { name: "React Js", description: "" },
   { name: "MongoDB", description: "" },
-  { name: "Node.js", description: "" },
+  { name: "Node Js", description: "" },
   { name: "Express", description: "" },
   { name: "SQL", description: "" },
   { name: "AI Driven Development", description: "" },
