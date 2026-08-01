@@ -1,10 +1,7 @@
 import type { ReactNode } from "react";
 import { Reveal } from "./Reveal";
 
-/**
- * One horizontal band of the profile card: dashed top rule, serif label,
- * optional sub-label, then content. Mirrors the single-column card layout.
- */
+
 export function Block({
   id,
   title,

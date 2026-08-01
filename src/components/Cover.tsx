@@ -30,13 +30,13 @@ export function Cover() {
         <ThemeToggle className="absolute right-4 top-4 sm:right-6 sm:top-6" />
       </div>
 
-      <div className="px-6 sm:px-10">
+      <div className="px-8 sm:px-10 ">
         <img
           src={avatar}
           alt={profile.name}
           width={816}
           height={816}
-          className="-mt-12 size-24 rounded-full border-2 border-background bg-muted object-cover sm:size-28"
+          className="mt-4 size-24 rounded-full border-2 border-background bg-muted object-cover sm:size-28"
         />
 
         <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 pb-8">
