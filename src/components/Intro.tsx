@@ -19,7 +19,7 @@ export function Intro() {
           </span>
           <span className="inline-flex items-center gap-2">
             <span className="size-1.5 rounded-full bg-accent" aria-hidden />
-            Currently learning {learning.join(" · ")}
+            Currently 21 , learning {learning.join(" · ")}
           </span>
         </div>
       </Reveal>

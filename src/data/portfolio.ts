@@ -1,18 +1,14 @@
-/**
- * Single source of truth for all portfolio content.
- * Edit this file to update the site — components read from here.
- */
 
 export const profile = {
   name: "Akshay Kocharekar",
   role: "DevOps & Full-Stack Developer",
-  metaLine: "DevOps · full-stack developer · Goa",
+  metaLine: "DevOps | Full-stack developer · Goa",
   motto: "",
   hook: "I build from zero and keep it live.",
   location: "Margao, Goa, India",
   email: "akshaykocharekar20@gmail.com",
   phone: "+91 9119455139",
-  github: "https://github.com/",
+  github: "https://github.com/akshaykocharekar",
   linkedin: "https://www.linkedin.com/",
   tagline:
     "I ship applications and the infrastructure that runs them — AWS, Docker, Linux and clean, component-driven frontends.",
@@ -86,7 +82,7 @@ export const projects = [
     description:
       "Full-stack platform with commuter, driver and admin dashboards, role-based authentication and live GPS updates over Socket.io, backed by MongoDB for persistence.",
     tech: ["React", "Node.js", "Express", "Socket.io", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com/",
+    github: "https://github.com/akshaykocharekar",
     demo: "https://easy-commute-one.vercel.app/",
     featured: true,
     image: "easycommute",
@@ -97,7 +93,7 @@ export const projects = [
     description:
       "Dependency-free Bash script that generates real-time server health reports for CPU, memory and disk, surfacing the top 5 resource-consuming processes for fast diagnostics.",
     tech: ["Bash", "Linux"],
-    github: "https://github.com/",
+    github: "https://github.com/akshaykocharekar",
     demo: null,
     featured: false,
     image: "server",
@@ -108,7 +104,7 @@ export const projects = [
     description:
       "Bash automation that compresses target directories into timestamped .tar.gz archives with input validation, permission handling and structured run logging for cron use.",
     tech: ["Bash", "Linux", "cron"],
-    github: "https://github.com/",
+    github: "https://github.com/akshaykocharekar",
     demo: null,
     featured: false,
     image: "logs",
