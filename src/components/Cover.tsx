@@ -1,15 +1,16 @@
-import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { SiGithub } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6";
+import { FiMail, FiDownload } from "react-icons/fi";
 import { profile } from "@/data/portfolio";
 import { ThemeToggle } from "./ThemeToggle";
 import banner from "@/assets/cover-banner.gif";
-import avatar from "@/assets/avatar1.jpg";
+import avatar from "@/assets/scuba-cat.gif";
 import resume from "@/assets/resume.pdf";
 
 const socials = [
-  { label: "GitHub", href: profile.github, icon: Github },
-  { label: "LinkedIn", href: profile.linkedin, icon: Linkedin },
-  { label: "Email", href: `mailto:${profile.email}`, icon: Mail },
-  
+  { label: "GitHub", href: profile.github, icon: SiGithub },
+  { label: "LinkedIn", href: profile.linkedin, icon: FaLinkedin },
+  { label: "Email", href: `mailto:${profile.email}`, icon: FiMail },
 ];
 
 export function Cover() {
@@ -25,7 +26,6 @@ export function Cover() {
           className="h-40 w-full object-cover sm:h-56"
         />
 
-       
         <ThemeToggle className="absolute right-4 top-4 sm:right-6 sm:top-6" />
       </div>
 
@@ -61,7 +61,7 @@ export function Cover() {
     download
     className="inline-flex h-9 items-center gap-1.5 rounded-full border border-border bg-card px-3 text-xs font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-raised"
   >
-    <Download className="size-3.5" />
+    <FiDownload className="size-3.5" />
     <span>Resume</span>
   </a>
 

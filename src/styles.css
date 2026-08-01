@@ -20,6 +20,10 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-display: "Instrument Serif", ui-serif, Georgia, serif;
 
+  /*--font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;*?
+--font-mono: "Commit Mono", ui-monospace, monospace;
+--font-display: "GT Sectra", "Iowan Old Style", serif;
+
   /* ===== Semantic Colors ===== */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -73,7 +77,10 @@
   --radius: 0.5rem;
 
   /* Premium warm light theme */
-  --background: oklch(70.298% 0.01933 89.402);
+--background:
+  radial-gradient(ellipse 70% 50% at 50% -10%, var(--accent-glow), transparent 60%),
+  repeating-linear-gradient(45deg, var(--texture) 0 1px, transparent 1px 10px),
+  oklch(70.298% 0.01933 89.402);
   --card: oklch(0.998 0.004 88);
   --popover: oklch(0.998 0.004 88);
   --muted: oklch(0.965 0.008 88);
@@ -117,8 +124,11 @@
 
 .dark {
   /* ===== Surfaces ===== */
-  --background: oklch(0.12 0.002 270);
-  --card: oklch(0.165 0.002 270);
+--background:
+  radial-gradient(ellipse 70% 50% at 50% -10%, var(--accent-glow), transparent 60%),
+  repeating-linear-gradient(45deg, var(--texture) 0 1px, transparent 1px 10px),
+  oklch(0.12 0.002 270);
+  --card: oklch(0% 0 0);
   --popover: oklch(0.185 0.002 270);
   --muted: oklch(0.205 0.002 270);
   --secondary: oklch(0.245 0.002 270);
@@ -129,7 +139,7 @@
   --popover-foreground: var(--foreground);
 
   --muted-foreground: oklch(0.78 0.002 270);
-  --subtle: oklch(0.62 0.002 270);
+  --subtle: oklch(100% 0.00011 271.152);
   --secondary-foreground: var(--foreground);
 
   /* ===== Gold Accent ===== */

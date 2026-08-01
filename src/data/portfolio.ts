@@ -2,18 +2,18 @@
 export const profile = {
   name: "Akshay Kocharekar",
   role: "DevOps & Full-Stack Developer",
-  metaLine: "DevOps | Full-stack developer · Goa",
+  metaLine: "DevOps | Full-stack · Goa",
   motto: "",
   hook: "I build from zero and keep it live.",
   location: "Margao, Goa, India",
   email: "akshaykocharekar20@gmail.com",
   phone: "+91 9119455139",
   github: "https://github.com/akshaykocharekar",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "www.linkedin.com/in/akshay-kocharekar-859829321",
   tagline:
     "I ship applications and the infrastructure that runs them — AWS, Docker, Linux and clean, component-driven frontends.",
   summary:
-    "Full-stack developer building a foundation in DevOps and cloud infrastructure, with hands-on experience deploying and securing applications on AWS EC2, containerizing services with Docker, and automating server tasks through Bash scripting on Linux.",
+    "Full-stack developer focused on DevOps, cloud infrastructure, and automation, with hands-on experience deploying applications on AWS EC2, containerizing services with Docker, and building reliable Linux-based workflows.",
   summary2:
     "I'm comfortable across the deployment pipeline: version control, environment configuration, monitoring and troubleshooting. Currently deepening Kubernetes and Terraform to move further into infrastructure automation and CI/CD, and looking for a DevOps Intern role where I can contribute to a product engineering team.",
 } as const;
@@ -47,7 +47,7 @@ export const skillGroups = [
   },
   {
     title: "Frontend",
-    icon: "layout",
+    icon: "monitor",
     items: ["React.js", "Next.js", "Tailwind CSS"],
   },
   {

@@ -1,64 +1,138 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import { Block } from "./Block";
 import { Reveal } from "./Reveal";
-import easycommute from "@/assets/project-easycommute.jpg";
+import easycommute from "@/assets/project-easycommute.png";
 import server from "@/assets/project-server.jpg";
 import logs from "@/assets/project-logs.jpg";
 
 const images: Record<string, string> = { easycommute, server, logs };
 
-/** "Proof of Work" — two-up project cards with preview art and tech chips. */
+function TechChips({ tech }: { tech: readonly string[] }) {
+  return (
+    <ul className="flex flex-wrap gap-2">
+      {tech.map((t) => (
+        <li
+          key={t}
+          className="rounded-md border border-border px-2 py-0.5 font-mono text-[10px] text-subtle"
+        >
+          {t}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ProjectLinks({ github, demo }: { github: string; demo: string | null }) {
+  return (
+    <div className="flex items-center gap-3">
+      {demo && (
+        <a
+          href={demo}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1 text-xs font-medium text-accent transition-opacity hover:opacity-80"
+        >
+          Live demo
+          <ArrowUpRight className="size-3.5" aria-hidden />
+        </a>
+      )}
+      <a
+        href={github}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="View source on GitHub"
+        className="inline-flex items-center gap-1 text-xs text-subtle transition-colors hover:text-foreground"
+      >
+        <Github className="size-3.5" aria-hidden />
+        {!demo && "Source"}
+      </a>
+    </div>
+  );
+}
+
+/** "Proof of Work" — featured hero card plus a tighter grid for the rest. */
 export function Projects() {
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+
   return (
     <Block id="projects" title="Proof of Work">
-  <div className="grid gap-4 sm:grid-cols-2">
-    {projects.map((p, i) => (
-      <Reveal key={p.name} delay={i * 80}>
-        <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-muted/40 transition-colors duration-150 hover:border-border-strong">
-          <div className="overflow-hidden border-b border-border">
-            <img
-              src={images[p.image]}
-              alt={`${p.name} — ${p.subtitle}`}
-              loading="lazy"
-              width={1580}
-              height={800}
-              className="h-52 w-full object-cover opacity-85 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
-            />
-          </div>
+      <div className="space-y-4">
+        {featured.map((p, i) => (
+          <Reveal key={p.name} delay={i * 80}>
+            <article className="card-surface group grid overflow-hidden sm:grid-cols-2">
+              <div className="relative overflow-hidden">
+                <img
+                  src={images[p.image]}
+                  alt={`${p.name} — ${p.subtitle}`}
+                  loading="lazy"
+                  width={1680}
+                  height={800}
+                  className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-full"
+                />
+              </div>
 
-          <div className="flex flex-1 flex-col p-4">
-            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-2">
-              <h3 className="truncate text-sm font-medium">{p.name}</h3>
+              <div className="flex flex-col justify-center gap-3 p-6">
+                <span className="w-fit rounded-full bg-accent/15 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-accent">
+                  Featured
+                </span>
 
-              <a
-                href={p.demo ?? p.github}
-                aria-label={`Open ${p.name}`}
-                className="shrink-0 text-subtle transition-colors duration-150 hover:text-foreground"
-              >
-                <ArrowUpRight className="size-4" aria-hidden />
-              </a>
-            </div>
+                <div>
+                  <h3 className="text-lg font-medium">{p.name}</h3>
+                  <p className="text-sm text-subtle">{p.subtitle}</p>
+                </div>
 
-            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-              {p.description}
-            </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {p.description}
+                </p>
 
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {p.tech.map((t) => (
-                <li
-                  key={t}
-                  className="rounded-md border border-border px-2 py-0.5 font-mono text-[10px] text-subtle"
-                >
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </article>
-      </Reveal>
-    ))}
-  </div>
-</Block>
+                <TechChips tech={p.tech} />
+
+                <div className="pt-1">
+                  <ProjectLinks github={p.github} demo={p.demo} />
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {rest.map((p, i) => (
+            <Reveal key={p.name} delay={i * 80}>
+              <article className="card-surface group flex h-full flex-col overflow-hidden">
+                <div className="overflow-hidden">
+                  <img
+                    src={images[p.image]}
+                    alt={`${p.name} — ${p.subtitle}`}
+                    loading="lazy"
+                    width={1580}
+                    height={800}
+                    className="aspect-video w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+                  />
+                </div>
+
+                <div className="flex flex-1 flex-col gap-3 p-4">
+                  <div>
+                    <h3 className="text-sm font-medium">{p.name}</h3>
+                    <p className="text-xs text-subtle">{p.subtitle}</p>
+                  </div>
+
+                  <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {p.description}
+                  </p>
+
+                  <TechChips tech={p.tech} />
+
+                  <div className="pt-1">
+                    <ProjectLinks github={p.github} demo={p.demo} />
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </Block>
   );
 }

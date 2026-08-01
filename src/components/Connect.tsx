@@ -14,21 +14,7 @@ const pills = [
 export function Connect() {
   return (
     <>
-      <Block>
-        <Reveal className="text-center">
-          <p className="font-display text-lg italic text-muted-foreground sm:text-xl">
-            If you've read this far, you might want to work together.
-          </p>
-          <a
-            href={`mailto:${profile.email}`}
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-transform duration-150 hover:-translate-y-0.5"
-          >
-            <Mail className="size-4" aria-hidden />
-            Send me an email
-          </a>
-        </Reveal>
-      </Block>
-
+      
       <Block id="contact" title="Let's connect" subtitle="Find me on these platforms">
         <Reveal>
           <ul className="flex flex-wrap gap-2">
