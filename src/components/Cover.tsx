@@ -36,7 +36,7 @@ export function Cover() {
           alt={profile.name}
           width={816}
           height={816}
-          className="mt-4 size-24 rounded-full border-2 border-background bg-muted object-cover sm:size-28"
+          className="mt-2.5 size-24 rounded-full border-2 border-background bg-muted object-cover sm:size-28"
         />
 
         <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 pb-8">
