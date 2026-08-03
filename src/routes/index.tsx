@@ -7,6 +7,7 @@ import { Stack } from "@/components/Stack";
 import { Education } from "@/components/Education";
 import { Connect } from "@/components/Connect";
 import { Footer } from "@/components/Footer";
+import { CurrentRoadmap } from "@/components/CurrentRoadmap";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +39,7 @@ function Index() {
         <Intro />
         <Experience />
         <Projects />
+         <CurrentRoadmap/>
         <Stack />
         <Education />
         <Connect />

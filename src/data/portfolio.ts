@@ -60,19 +60,18 @@ export const skillGroups = [
 export const learning = ["Kubernetes", "Terraform (IaC)"] as const;
 
 export const experience = [
-  {
-    title: "Cloud Deployment & Containerization",
-    org: "Self-Directed · Personal Projects",
-    period: "2026 – Present",
-    points: [
-      "Deployed and secured Node.js/Express applications on AWS EC2 (Ubuntu), configuring SSH access and security groups/networking.",
-      "Built Docker images for Node.js applications and managed multi-container setups with Docker Compose.",
-      "Worked extensively in the Linux terminal for package management, file permissions, process monitoring and server administration.",
-      "Wrote Bash scripts to automate system health checks and log management, applying Git branching workflows across dev and production.",
-      "Applied CI/CD and cloud fundamentals (compute, networking, security groups); building hands-on familiarity with Kubernetes and Terraform.",
-      "Troubleshot deployment issues spanning application code, Docker, networking and Linux environments.",
-    ],
-  },
+{
+  title: "Cloud Infrastructure & Linux",
+  org: "Self-Directed · Personal Projects",
+  period: "2026 – Present",
+  points: [
+    "Provisioned and hardened Ubuntu Linux servers on AWS EC2 using SSH key authentication, UFW firewall, Fail2Ban, and unattended security updates.",
+    "Deployed and configured Nginx to serve public web applications while managing network access with AWS Security Groups and host-level firewalls.",
+    "Worked extensively in the Linux terminal for package management, process monitoring, service management (systemd), and server administration.",
+    "Documented infrastructure with architecture diagrams, threat models, and deployment documentation following industry best practices.",
+    "Currently expanding into Docker, Kubernetes, Terraform, and CI/CD through hands-on infrastructure projects."
+  ],
+},
 ] as const;
 
 export const projects = [
