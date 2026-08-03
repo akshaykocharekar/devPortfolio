@@ -3,7 +3,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FiMail, FiDownload } from "react-icons/fi";
 import { profile } from "@/data/portfolio";
 import { ThemeToggle } from "./ThemeToggle";
-import banner from "@/assets/cover-banner.gif";
+import banner from "@/assets/banner.jpg";
 import avatar from "@/assets/scuba-cat.gif";
 import resume from "@/assets/resume.pdf";
 
@@ -22,8 +22,8 @@ export function Cover() {
           alt=""
           aria-hidden
           width={1536}
-          height={512}
-          className="h-40 w-full object-cover sm:h-56"
+          height={202}
+          className="h-20 w-full object-cover sm:h-40"
         />
 
         <ThemeToggle className="absolute right-4 top-4 sm:right-6 sm:top-6" />
