@@ -9,27 +9,45 @@ const documentation = [
     number: "01",
     title: "Server Monitoring & SLO Stack",
     description:
-      "Containerized observability stack for monitoring server health, collecting metrics, visualizing system performance and tracking service-level objectives.",
-    topics: ["Architecture", "Docker", "Prometheus", "Grafana", "SLOs"],
-    github: "https://github.com/akshaykocharekar",
+      "Containerized observability stack for monitoring server health, collecting metrics, visualizing system performance and tracking service-level objectives with error budgets and burn-rate alerting.",
+    topics: ["Docker Compose", "Prometheus", "Grafana", "SLOs"],
+    github: "https://github.com/akshaykocharekar/monitoring-stack",
     doc: "#", // swap for a real file, e.g. `import doc01 from "@/assets/docs/monitoring-stack.pdf"`
   },
   {
     number: "02",
     title: "CI Pipeline",
     description:
-      "Continuous integration pipeline covering application builds, automated tests and security checks using GitHub Actions.",
+      "Production-inspired continuous integration pipeline covering application builds, automated tests, security scanning and packaging using GitHub Actions.",
     topics: ["GitHub Actions", "CI", "Testing", "Security"],
-    github: "https://github.com/akshaykocharekar",
+    github: "https://github.com/akshaykocharekar/CI-Pipeline",
     doc: "#",
   },
   {
     number: "03",
-    title: "Static Site Deployment",
+    title: "Hardened Linux Server",
     description:
-      "Production-style static site deployment covering Linux, Nginx, HTTPS configuration and server administration.",
-    topics: ["AWS", "Linux", "Nginx", "HTTPS", "Deployment"],
-    github: "https://github.com/akshaykocharekar",
+      "Production-style Ubuntu server deployed on AWS EC2, secured with SSH key authentication, a UFW firewall, Nginx, Fail2Ban and automatic security updates.",
+    topics: ["AWS EC2", "Linux", "Nginx", "Fail2Ban", "SSH"],
+    github: "https://github.com/akshaykocharekar/hardened-linux-server",
+    doc: "#",
+  },
+  {
+    number: "04",
+    title: "Static Site Auto-Deploy",
+    description:
+      "Static website hosted on AWS S3 with deployments automated through GitHub Actions, content delivered via CloudFront and DNS managed through Cloudflare.",
+    topics: ["AWS S3", "CloudFront", "GitHub Actions", "Cloudflare DNS"],
+    github: "https://github.com/akshaykocharekar/static-site-auto-deploy",
+    doc: "#",
+  },
+  {
+    number: "05",
+    title: "Multi-Service Docker App",
+    description:
+      "Containerized MERN application demonstrating Docker, Docker Compose, MongoDB, Redis, container networking, volumes and multi-service orchestration.",
+    topics: ["Docker Compose", "MongoDB", "Redis", "Networking"],
+    github: "https://github.com/akshaykocharekar/Multi-Service-docker-app",
     doc: "#",
   },
 ];
