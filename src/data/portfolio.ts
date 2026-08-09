@@ -76,41 +76,63 @@ export const experience = [
 ] as const;
 
 export const projects = [
+  
+  {
+    name: "Monitoring & SLO Stack",
+    subtitle: "DevOps/SRE observability stack",
+    description:
+      "Monitoring stack demonstrating infrastructure metrics, application availability, SLOs, error budgets and burn-rate alerting, built with Docker Compose, Prometheus and Grafana.",
+    tech: ["Docker Compose", "Prometheus", "Grafana", "SLOs", "Node.js"],
+    github: "https://github.com/akshaykocharekar/monitoring-stack",
+    demo: null,
+    featured: true,
+    image: "monitoring-stack",
+  },
+  {
+    name: "CI Pipeline",
+    subtitle: "Automated build, test & scan pipeline",
+    description:
+      "Production-inspired CI pipeline using GitHub Actions to build, test, scan and package a Node.js application before publishing it.",
+    tech: ["GitHub Actions", "Node.js", "CI/CD", "Security scanning"],
+    github: "https://github.com/akshaykocharekar/CI-Pipeline",
+    demo: null,
+    featured: false,
+    image: "ci-pipeline",
+  },
+  {
+    name: "Static Site Auto-Deploy",
+    subtitle: "AWS S3 + CloudFront + GitHub Actions",
+    description:
+      "Static website hosted on AWS S3 with deployments automated through GitHub Actions, content delivered via CloudFront, and DNS managed through Cloudflare.",
+    tech: ["AWS S3", "CloudFront", "GitHub Actions", "Cloudflare DNS"],
+    github: "https://github.com/akshaykocharekar/static-site-auto-deploy",
+    demo: null,
+    featured: false,
+    image: "static-site-deploy",
+  },
+  {
+    name: "Multi-Service Docker App",
+    subtitle: "Containerized MERN with Redis",
+    description:
+      "Containerized MERN application demonstrating Docker, Docker Compose, MongoDB, Redis, container networking, volumes and multi-service orchestration.",
+    tech: ["Docker Compose", "MongoDB", "Redis", "Node.js", "React"],
+    github: "https://github.com/akshaykocharekar/Multi-Service-docker-app",
+    demo: null,
+    featured: false,
+    image: "docker-multi-service",
+  },
   {
     name: "EasyCommute",
     subtitle: "Real-Time Bus Tracking Platform",
     description:
       "Full-stack platform with commuter, driver and admin dashboards, role-based authentication and live GPS updates over Socket.io, backed by MongoDB for persistence.",
     tech: ["React", "Node.js", "Express", "Socket.io", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com/akshaykocharekar",
+    github: "https://github.com/akshaykocharekar/easyCommute",
     demo: "https://easy-commute-one.vercel.app/",
-    featured: true,
+    featured: false,
     image: "easycommute",
   },
-  {
-    name: "Server Performance Stats",
-    subtitle: "Linux health reporting CLI",
-    description:
-      "Dependency-free Bash script that generates real-time server health reports for CPU, memory and disk, surfacing the top 5 resource-consuming processes for fast diagnostics.",
-    tech: ["Bash", "Linux"],
-    github: "https://github.com/akshaykocharekar",
-    demo: null,
-    featured: false,
-    image: "server",
-  },
-  {
-    name: "Log Archive Tool",
-    subtitle: "Automated log rotation",
-    description:
-      "Bash automation that compresses target directories into timestamped .tar.gz archives with input validation, permission handling and structured run logging for cron use.",
-    tech: ["Bash", "Linux", "cron"],
-    github: "https://github.com/akshaykocharekar",
-    demo: null,
-    featured: false,
-    image: "logs",
-  },
 ] as const;
-
 export const education = [
   {
     school: "VVM's Shree Damodar College of Commerce & Economics",

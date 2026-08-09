@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, ImageOff } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import { Block } from "./Block";
 import { Reveal } from "./Reveal";
@@ -20,6 +20,43 @@ function TechChips({ tech }: { tech: readonly string[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+/** Renders the project screenshot, or a quiet placeholder when no image asset exists yet. */
+function ProjectMedia({
+  image,
+  alt,
+  imgClassName,
+}: {
+  image: string;
+  alt: string;
+  imgClassName: string;
+}) {
+  const src = images[image];
+
+  if (!src) {
+    return (
+      <div
+        className={`flex flex-col items-center justify-center gap-2 bg-muted/50 text-subtle ${imgClassName}`}
+      >
+        <ImageOff className="size-6" aria-hidden />
+        <span className="font-mono text-[10px] uppercase tracking-[0.14em]">
+          Preview coming soon
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      width={1580}
+      height={800}
+      className={imgClassName}
+    />
   );
 }
 
@@ -63,13 +100,10 @@ export function Projects() {
           <Reveal key={p.name} delay={i * 80}>
             <article className="card-surface group grid overflow-hidden sm:grid-cols-2">
               <div className="relative overflow-hidden">
-                <img
-                  src={images[p.image]}
+                <ProjectMedia
+                  image={p.image}
                   alt={`${p.name} — ${p.subtitle}`}
-                  loading="lazy"
-                  width={1680}
-                  height={800}
-                  className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-full"
+                  imgClassName="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-full"
                 />
               </div>
 
@@ -102,13 +136,10 @@ export function Projects() {
             <Reveal key={p.name} delay={i * 80}>
               <article className="card-surface group flex h-full flex-col overflow-hidden">
                 <div className="overflow-hidden">
-                  <img
-                    src={images[p.image]}
+                  <ProjectMedia
+                    image={p.image}
                     alt={`${p.name} — ${p.subtitle}`}
-                    loading="lazy"
-                    width={1580}
-                    height={800}
-                    className="aspect-video w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+                    imgClassName="aspect-video w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
                   />
                 </div>
 
