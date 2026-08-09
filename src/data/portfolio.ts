@@ -57,6 +57,7 @@ export const skillGroups = [
   },
 ] as const;
 
+
 export const learning = ["Kubernetes", "Terraform (IaC)"] as const;
 
 export const experience = [
@@ -124,6 +125,7 @@ export const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Docs", href: "#documentation" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ] as const;

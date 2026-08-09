@@ -9,6 +9,7 @@ import { Education } from "@/components/Education";
 import { Connect } from "@/components/Connect";
 import { Footer } from "@/components/Footer";
 import { CommandPalette } from "@/components/CommandPalette";
+import { Documentation } from "@/components/Documentation";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,6 +42,7 @@ function Index() {
         <Cover />
         <Intro />
         <Projects />
+        <Documentation />
         <CurrentRoadmap />
         <Experience />
         <Stack />
