@@ -7,7 +7,7 @@ import { Reveal } from "./Reveal";
 
 const documentation = [
 {
-  number: "02",
+  number: "01",
   title: "Kubernetes Zero-Downtime Deployment",
   description:
     "Multi-node Kubernetes deployment demonstrating rolling updates, readiness and liveness probes, NGINX Ingress routing, rollout protection, failure simulation and rollback without intentionally reducing available application replicas.",
@@ -22,7 +22,7 @@ const documentation = [
     "Rollback",
   ],
   github: "https://github.com/akshaykocharekar/k8s-zero-downtime",
-  doc: "src/assets/Kubernetes_Zero_Downtime_Project_Report.docx",
+  doc: "/Kubernetes_Zero_Downtime_Project_Report.docx",
 },
   
 
