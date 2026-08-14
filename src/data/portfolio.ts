@@ -85,7 +85,7 @@ export const projects = [
     tech: ["Docker Compose", "Prometheus", "Grafana", "SLOs", "Node.js"],
     github: "https://github.com/akshaykocharekar/monitoring-stack",
     demo: null,
-    featured: true,
+    featured: false,
     image: "monitoring-stack",
   },
   {
@@ -99,17 +99,24 @@ export const projects = [
     featured: false,
     image: "ci-pipeline",
   },
-  {
-    name: "Static Site Auto-Deploy",
-    subtitle: "AWS S3 + CloudFront + GitHub Actions",
-    description:
-      "Static website hosted on AWS S3 with deployments automated through GitHub Actions, content delivered via CloudFront, and DNS managed through Cloudflare.",
-    tech: ["AWS S3", "CloudFront", "GitHub Actions", "Cloudflare DNS"],
-    github: "https://github.com/akshaykocharekar/static-site-auto-deploy",
-    demo: null,
-    featured: false,
-    image: "static-site-deploy",
-  },
+{
+  name: "Kubernetes Zero-Downtime Deployment",
+  subtitle: "Kind + Kubernetes + NGINX Ingress",
+  description:
+    "Multi-node Kubernetes deployment demonstrating rolling updates, readiness and liveness probes, Service and Ingress routing, slow-start and unhealthy release simulations, rollout protection, and rollback.",
+  tech: [
+    "Kubernetes",
+    "Kind",
+    "Docker",
+    "NGINX Ingress",
+    "Rolling Updates",
+    "Readiness & Liveness Probes",
+  ],
+  github: "https://github.com/akshaykocharekar/k8s-zero-downtime",
+  demo: null,
+  featured: true,
+  image: "Project1",
+},
   {
     name: "Multi-Service Docker App",
     subtitle: "Containerized MERN with Redis",

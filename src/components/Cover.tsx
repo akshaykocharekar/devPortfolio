@@ -3,7 +3,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FiMail, FiDownload } from "react-icons/fi";
 import { profile } from "@/data/portfolio";
 import { ThemeToggle } from "./ThemeToggle";
-import banner from "@/assets/banner.jpg";
+import banner from "@/assets/cover-banner2.gif";
 import avatar from "@/assets/scuba-cat.gif";
 import resume from "@/assets/resume.pdf";
 

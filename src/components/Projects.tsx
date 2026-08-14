@@ -6,7 +6,10 @@ import easycommute from "@/assets/project-easycommute.png";
 import server from "@/assets/project-server.jpg";
 import logs from "@/assets/project-logs.jpg";
 
-const images: Record<string, string> = { easycommute, server, logs };
+import Project1 from "@/assets/project1.jpg"
+
+
+const images: Record<string, string> = { easycommute, server, logs ,Project1};
 
 function TechChips({ tech }: { tech: readonly string[] }) {
   return (
